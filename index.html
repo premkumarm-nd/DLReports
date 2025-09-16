@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribution Lists Dashboard</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; padding: 20px; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container { 
+            max-width: 1400px; 
+            margin: 0 auto; 
+        }
+        .header { 
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white; 
+            padding: 40px; 
+            text-align: center; 
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .header h1 { 
+            margin: 0; 
+            font-size: 3em; 
+            font-weight: 300; 
+            margin-bottom: 10px;
+        }
+        .header .subtitle { 
+            opacity: 0.8; 
+            font-size: 1.2em; 
+        }
+        .dashboard-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .dashboard-stat {
+            background: rgba(255,255,255,0.1);
+            padding: 20px 30px;
+            border-radius: 8px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        .dashboard-stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+        }
+        .dashboard-stat-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .dl-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
+        .dl-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .dl-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #9b59b6);
+        }
+        .dl-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        .dl-header h3 {
+            margin: 0 0 5px 0;
+            color: #2c3e50;
+            font-size: 1.3em;
+        }
+        .dl-email {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+        .dl-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            padding: 15px 0;
+            border-top: 1px solid #ecf0f1;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        .dl-stat {
+            text-align: center;
+        }
+        .dl-stat .stat-number {
+            display: block;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #3498db;
+        }
+        .dl-stat .stat-label {
+            font-size: 0.8em;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .dl-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .view-report-btn {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        .view-report-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+        .report-time {
+            font-size: 0.8em;
+            color: #7f8c8d;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: rgba(255,255,255,0.8);
+            margin-top: 50px;
+        }
+        .refresh-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #27ae60;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+            transition: all 0.3s ease;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .refresh-button:hover {
+            transform: rotate(180deg) scale(1.1);
+        }
+        @media (max-width: 768px) {
+            .dl-grid { grid-template-columns: 1fr; }
+            .dashboard-stats { flex-direction: column; gap: 15px; }
+            .header h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Distribution Lists Dashboard</h1>
+            <div class="subtitle">Comprehensive reporting for all distribution lists</div>
+            <div class="dashboard-stats">
+                <div class="dashboard-stat">
+                    <span class="dashboard-stat-number">9</span>
+                    <span class="dashboard-stat-label">Distribution Lists</span>
+                </div>
+                <div class="dashboard-stat">
+                    <span class="dashboard-stat-number">55</span>
+                    <span class="dashboard-stat-label">Total Members</span>
+                </div>
+                <div class="dashboard-stat">
+                    <span class="dashboard-stat-number">14</span>
+                    <span class="dashboard-stat-label">Total Owners</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dl-grid">
+                            <div class="dl-card">
+                    <div class="dl-header">
+                        <h3>ND IND In Communication</h3>
+                        <span class="dl-email">ND_IND_In_Communication@netradyne.com</span>
+                    </div>
+                    <div class="dl-stats">
+                        <div class="dl-stat">
+                            <span class="stat-number">6</span>
+                            <span class="stat-label">Members</span>
+                        </div>
+                        <div class="dl-stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Owners</span>
+                        </div>
+                    </div>
+                    <div class="dl-actions">
+                        <a href="https://netorg726775.sharepoint.com/:f:/r/sites/ITTEAM259/Shared%20Documents/General/Prem/DLReports/ND-TalentAcquisition@netradyne.com_20250916_183339?csf=1&web=1&e=ANGzKQ\index.html" class="view-report-btn">View Report</a>
+                        <span class="report-time">Generated: Sep 16, 2025 at 18:33</span>
+                    </div>
+                </div>                <div class="dl-card">
+                    <div class="dl-header">
+                        <h3>ND-TalentAcquisition</h3>
+                        <span class="dl-email">ND-TalentAcquisition@netradyne.com</span>
+                    </div>
+                    <div class="dl-stats">
+                        <div class="dl-stat">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Members</span>
+                        </div>
+                        <div class="dl-stat">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Owners</span>
+                        </div>
+                    </div>
+                    <div class="dl-actions">
+                        <a href="ND-TalentAcquisition@netradyne.com_20250916_183339/index.html" class="view-report-btn">View Report</a>
+                        <span class="report-time">Generated: Sep 16, 2025 at 18:33</span>
+                    </div>
+                </div>                <div class="dl-card">
+                    <div class="dl-header">
+                        <h3>Netradyne Cultural Team</h3>
+                        <span class="dl-email">ndsparks@netradyne.com</span>
+                    </div>
+                    <div class="dl-stats">
+                        <div class="dl-stat">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Members</span>
+                        </div>
+                        <div class="dl-stat">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Owners</span>
+                        </div>
+                    </div>
+                    <div class="dl-actions">
+                        <a href="ndsparks@netradyne.com_20250916_183405/index.html" class="view-report-btn">View Report</a>
+                        <span class="report-time">Generated: Sep 16, 2025 at 18:34</span>
+                    </div>
+                </div>                <div class="dl-card">
+                    <div class="dl-header">
+                        <h3>Admin Helpdesk</h3>
+                        <span class="dl-email">admin.helpdesk@netradyne.com</span>
+                    </div>
+                    <div class="dl-stats">
+                        <div class="dl-stat">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Members</span>
+                        </div>
+                        <div class="dl-stat">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Owners</span>
+                        </div>
+                    </div>
+                    <div class="dl-actions">
+                        <a href="admin.helpdesk@netradyne.com_20250916_183420/index.html" class="view-report-btn">View Report</a>
+                        <span class="report-time">Generated: Sep 16, 2025 at 18:34</span>
+                    </div>
+                </div>                <div class="dl-card">
+                    <div class="dl-header">
+                        <h3>ND_Global_Communication</h3>
+                        <span class="dl-email">ND_Global_Communication@netradyne.com</span>
+                    </div>
+                    <div class="dl-stats">
+                        <div class="dl-stat">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Members</span>
+                        </div>
+                        <div class="dl-stat">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Owners</span>
+                        </div>
+                    </div>
+                    <div class="dl-actions">
+                        <a href="ND_Global_Communication@netradyne.com_20250916_183443/index.html" class="view-report-btn">View Report</a>
+                        <span class="report-time">Generated: Sep 16, 2025 at 18:34</span>
+                    </div>
+                </div>                <div class="dl-card">
+                    <div class="dl-header">
+                        <h3>All</h3>
+                        <span class="dl-email">all@netradyne.com</span>
+                    </div>
+                    <div class="dl-stats">
+                        <div class="dl-stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Members</span>
+                        </div>
+                        <div class="dl-stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Owners</span>
+                        </div>
+                    </div>
+                    <div class="dl-actions">
+                        <a href="all@netradyne.com_20250916_183544/index.html" class="view-report-btn">View Report</a>
+                        <span class="report-time">Generated: Sep 16, 2025 at 18:35</span>
+                    </div>
+                </div>                <div class="dl-card">
+                    <div class="dl-header">
+                        <h3>India-All</h3>
+                        <span class="dl-email">india-all@netradyne.com</span>
+                    </div>
+                    <div class="dl-stats">
+                        <div class="dl-stat">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Members</span>
+                        </div>
+                        <div class="dl-stat">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Owners</span>
+                        </div>
+                    </div>
+                    <div class="dl-actions">
+                        <a href="india-all@netradyne.com_20250916_183733/index.html" class="view-report-btn">View Report</a>
+                        <span class="report-time">Generated: Sep 16, 2025 at 18:37</span>
+                    </div>
+                </div>                <div class="dl-card">
+                    <div class="dl-header">
+                        <h3>US-All</h3>
+                        <span class="dl-email">us-all@netradyne.com</span>
+                    </div>
+                    <div class="dl-stats">
+                        <div class="dl-stat">
+                            <span class="stat-number">10</span>
+                            <span class="stat-label">Members</span>
+                        </div>
+                        <div class="dl-stat">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Owners</span>
+                        </div>
+                    </div>
+                    <div class="dl-actions">
+                        <a href="us-all@netradyne.com_20250916_183909/index.html" class="view-report-btn">View Report</a>
+                        <span class="report-time">Generated: Sep 16, 2025 at 18:39</span>
+                    </div>
+                </div>                <div class="dl-card">
+                    <div class="dl-header">
+                        <h3>Netradyne SVP's</h3>
+                        <span class="dl-email">ND.SVP@netradyne.com</span>
+                    </div>
+                    <div class="dl-stats">
+                        <div class="dl-stat">
+                            <span class="stat-number">6</span>
+                            <span class="stat-label">Members</span>
+                        </div>
+                        <div class="dl-stat">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">Owners</span>
+                        </div>
+                    </div>
+                    <div class="dl-actions">
+                        <a href="ND.SVP@netradyne.com_20250916_183915/index.html" class="view-report-btn">View Report</a>
+                        <span class="report-time">Generated: Sep 16, 2025 at 18:39</span>
+                    </div>
+                </div>
+        </div>
+        
+        <div class="footer">
+            <p>Distribution Lists Dashboard • Generated on Sep 16, 2025 at 18:39</p>
+            <p>Reports saved to: C:\DLReports</p>
+        </div>
+    </div>
+    
+    <a href="#" class="refresh-button" onclick="location.reload();" title="Refresh Dashboard">
+        ↻
+    </a>
+</body>
+</html>
