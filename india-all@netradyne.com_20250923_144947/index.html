@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribution List Report - India-All</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; padding: 20px; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            background: white; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .header { 
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white; 
+            padding: 30px; 
+            text-align: center; 
+            position: relative;
+        }
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-50%) translateX(-5px);
+        }
+        .header h1 { margin: 0; font-size: 2.2em; font-weight: 300; }
+        .header .subtitle { opacity: 0.8; margin-top: 10px; font-size: 1.1em; }
+        .content { padding: 30px; }
+        .section { 
+            margin-bottom: 40px; 
+            background: #f8f9fa; 
+            border-radius: 8px; 
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .section h2 { 
+            color: #2c3e50; 
+            margin-top: 0; 
+            margin-bottom: 20px; 
+            font-size: 1.5em; 
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        table { 
+            border-collapse: collapse; 
+            width: 100%; 
+            margin-bottom: 20px; 
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        th { 
+            background: #3498db; 
+            color: white; 
+            padding: 12px; 
+            text-align: left; 
+            font-weight: 600;
+        }
+        td { 
+            border-bottom: 1px solid #ecf0f1; 
+            padding: 12px; 
+            vertical-align: top; 
+        }
+        tr:hover { background-color: #f1f2f6; }
+        .scrollable { 
+            max-height: 400px; 
+            overflow-y: auto; 
+            border-radius: 6px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .info-table td:first-child { 
+            background: #ecf0f1; 
+            font-weight: 600; 
+            width: 250px;
+        }
+        .stats { 
+            display: flex; 
+            justify-content: space-around; 
+            margin: 20px 0; 
+        }
+        .stat-box { 
+            text-align: center; 
+            background: white; 
+            padding: 20px; 
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            min-width: 120px;
+        }
+        .stat-number { 
+            font-size: 2.5em; 
+            font-weight: bold; 
+            color: #3498db; 
+        }
+        .stat-label { 
+            color: #7f8c8d; 
+            font-size: 0.9em; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+        }
+        .footer { 
+            text-align: center; 
+            padding: 20px; 
+            color: #7f8c8d; 
+            background: #ecf0f1; 
+            margin-top: 30px;
+        }
+        .badge { 
+            display: inline-block; 
+            background: #e74c3c; 
+            color: white; 
+            padding: 4px 8px; 
+            border-radius: 4px; 
+            font-size: 0.8em; 
+            margin-left: 10px;
+        }
+        .badge.enabled { background: #27ae60; }
+        .badge.dynamic { background: #f39c12; }
+        .badge.static { background: #9b59b6; }
+        .restriction-value {
+            word-wrap: break-word;
+            max-width: 600px;
+        }
+        .csv-export-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+        }
+        .csv-export-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+        }
+        @media (max-width: 768px) {
+            .stats { flex-direction: column; gap: 15px; }
+            .content { padding: 15px; }
+            .back-button { position: static; margin-bottom: 20px; transform: none; display: inline-block; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="../index.html" class="back-button">← Back to Home</a>
+            <h1>Distribution List Report</h1>
+            <div class="subtitle">India-All <span class='badge static'>Static</span> • Generated on Sep 23, 2025 at 14:49</div>
+        </div>
+        
+        <div class="content">
+            <div style='margin: 20px 0; text-align: center;'>
+        <a href='DL_Export_Summary.csv' class='csv-export-btn' download>📊 Export Summary CSV</a>
+        <a href='members_detailed.csv' class='csv-export-btn' download style='margin-left: 10px;'>👥 Export Members CSV</a>
+    </div>
+            
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Members</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Owners</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Send As Perms</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Moderators</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Basic Information</h2>
+                <table class="info-table">
+                    <tr><td><strong>Display Name</strong></td><td>India-All</td></tr>
+                    <tr><td><strong>Type</strong></td><td>Distribution List <span class='badge static'>Static</span></td></tr>
+                    <tr><td><strong>Alias</strong></td><td>{B35240CA-9CF5-48B0-BA0A-719457C4DF03}</td></tr>
+                    <tr><td><strong>Primary SMTP Address</strong></td><td>india-all@netradyne.com</td></tr>
+                    <tr><td><strong>Recipient Type</strong></td><td>MailUniversalDistributionGroup</td></tr>
+                    <tr><td><strong>Hidden from Address Lists</strong></td><td>False<span class='badge enabled'>Visible</span></td></tr>
+                    <tr><td><strong>Require Sender Authentication</strong></td><td>True<span class='badge enabled'>Required</span></td></tr>
+                    
+                    <tr><td><strong>Description</strong></td><td>All employees and consultants based out of India</td></tr>
+                    <tr><td><strong>When Created</strong></td><td>09/14/2024 01:29:17</td></tr>
+                    <tr><td><strong>When Changed</strong></td><td>09/19/2025 18:33:26</td></tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>Members (4 total)</h2>
+                <div class="scrollable">
+                    <table>
+                        <tr>
+                            <th>Display Name</th>
+                            <th>Email Address</th>
+                            <th>Type</th>
+                            <th>Department</th>
+                            <th>Title</th>
+                        </tr><tr><td>blr-staff</td><td>blr-staff@netradyne.com</td><td>DynamicDistributionGroup</td><td>Not Set</td><td>Not Set</td></tr>
+<tr><td>Bangalore Interns</td><td>blr-intern@netradyne.com</td><td>DynamicDistributionGroup</td><td>Not Set</td><td>Not Set</td></tr>
+<tr><td>Bangalore Contractors</td><td>blr-contract@netradyne.com</td><td>DynamicDistributionGroup</td><td>Not Set</td><td>Not Set</td></tr>
+<tr><td>Shiwani Vyas</td><td>shiwani.vyas@netradyne.com</td><td>UserMailbox</td><td>HR & Admin</td><td>Director Internal Communications</td></tr>
+
+                    </table>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Owners & Managers</h2>
+                <table>
+                    <tr><th>Display Name</th><th>Email Address</th><th>Type</th></tr><tr><td>Ashwin Kumar - Finance</td><td>ashwin.kumar@netradyne.com</td><td>UserMailbox</td></tr>
+
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>Permissions</h2>
+                <h3>Send As Permissions</h3>
+                <table>
+                    <tr><th>Trustee</th><th>Access Rights</th><th>Inherited</th></tr><tr><td colspan='3' style='text-align:center; font-style:italic; color:#7f8c8d;'>No Send As permissions configured</td></tr>
+                </table>
+                
+                <h3>Send On Behalf Permissions</h3>
+                <table>
+                    <tr><th>Display Name</th><th>Email Address</th><th>Type</th></tr><tr><td colspan='3' style='text-align:center; font-style:italic; color:#7f8c8d;'>No Send On Behalf permissions configured</td></tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>Moderation Settings</h2>
+                <table class="info-table">
+                    <tr><td><strong>Moderation Enabled</strong></td><td>True<span class='badge enabled'>Enabled</span></td></tr>
+                    <tr><td><strong>Moderated By</strong></td><td>Shiwani Vyas (shiwani.vyas@netradyne.com); Pooja Madappa (pooja.madappa@netradyne.com); Ashwin Kumar - Finance (ashwin.kumar@netradyne.com); Vinay Rai (vinay.rai@netradyne.com); David Julian (djulian@netradyne.com); Saravanan Sankaran (saravanan.sankaran@netradyne.com)</td></tr>
+                    <tr><td><strong>Send Moderation Notifications</strong></td><td>Internal</td></tr>
+                    <tr><td><strong>Bypass Moderation From</strong></td><td class="restriction-value">Finance India (finance-india@netradyne.com); Netradyne InfoSec Team (infosec@netradyne.com); Email-ExceptionUsers (emailexceptionusers@netradyne.com); IT TEAM Netradyne IT Team (ITTEAM259@NETORG726775.onmicrosoft.com it@netradyne.com); Documentation Team (documentation-team@netradyne.com); ND IND In Communication (ND_IND_In_Communication@netradyne.com); NDTalentDevelopment (NDTalentDevelopment@netradyne.com); ND_Global_Communication (ND_Global_Communication@netradyne.com)</td></tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>Message Restrictions</h2>
+                <table class="info-table">
+                    <tr><td><strong>Accept Messages Only From</strong></td><td class="restriction-value">Finance India (finance-india@netradyne.com); Netradyne InfoSec Team (infosec@netradyne.com)</td></tr>
+                    <tr><td><strong>Accept Messages Only From DL Members</strong></td><td class="restriction-value">Email-ExceptionUsers (emailexceptionusers@netradyne.com); IT TEAM Netradyne IT Team (ITTEAM259@NETORG726775.onmicrosoft.com it@netradyne.com); Netradyne Cultural Team (ndsparks@netradyne.com); Documentation Team (documentation-team@netradyne.com); IT Infosec Team (it_infosecteam@netradyne.com); ND IND In Communication (ND_IND_In_Communication@netradyne.com); Admin Helpdesk (admin.helpdesk@netradyne.com); NDTalentDevelopment (NDTalentDevelopment@netradyne.com); ND-TalentAcquisition (ND-TalentAcquisition@netradyne.com); ND_Global_Communication (ND_Global_Communication@netradyne.com)</td></tr>
+                    <tr><td><strong>Reject Messages From</strong></td><td class="restriction-value">Not Set</td></tr>
+                    <tr><td><strong>Reject Messages From DL Members</strong></td><td class="restriction-value">Not Set</td></tr>
+                    <tr><td><strong>Max Receive Size</strong></td><td>Unlimited</td></tr>
+                    <tr><td><strong>Max Send Size</strong></td><td>Unlimited</td></tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>CSV files location:</strong> C:\DLReports\india-all@netradyne.com_20250923_144947</p>
+            <p>Report generated on Sep 23, 2025 at 14:49</p>
+        </div>
+    </div>
+</body>
+</html>
