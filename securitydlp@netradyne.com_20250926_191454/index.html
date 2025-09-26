@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Mailbox Report - Security DLP</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; padding: 20px; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            background: white; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .header { 
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white; 
+            padding: 30px; 
+            text-align: center; 
+            position: relative;
+        }
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-50%) translateX(-5px);
+        }
+        .header h1 { margin: 0; font-size: 2.2em; font-weight: 300; }
+        .header .subtitle { opacity: 0.8; margin-top: 10px; font-size: 1.1em; }
+        .content { padding: 30px; }
+        .section { 
+            margin-bottom: 40px; 
+            background: #f8f9fa; 
+            border-radius: 8px; 
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .section h2 { 
+            color: #2c3e50; 
+            margin-top: 0; 
+            margin-bottom: 20px; 
+            font-size: 1.5em; 
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        table { 
+            border-collapse: collapse; 
+            width: 100%; 
+            margin-bottom: 20px; 
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        th { 
+            background: #3498db; 
+            color: white; 
+            padding: 12px; 
+            text-align: left; 
+            font-weight: 600;
+        }
+        td { 
+            border-bottom: 1px solid #ecf0f1; 
+            padding: 12px; 
+            vertical-align: top; 
+        }
+        tr:hover { background-color: #f1f2f6; }
+        .info-table td:first-child { 
+            background: #ecf0f1; 
+            font-weight: 600; 
+            width: 250px;
+        }
+        .stats { 
+            display: flex; 
+            justify-content: space-around; 
+            margin: 20px 0; 
+        }
+        .stat-box { 
+            text-align: center; 
+            background: white; 
+            padding: 20px; 
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            min-width: 120px;
+        }
+        .stat-number { 
+            font-size: 2.5em; 
+            font-weight: bold; 
+            color: #3498db; 
+        }
+        .stat-label { 
+            color: #7f8c8d; 
+            font-size: 0.9em; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+        }
+        .footer { 
+            text-align: center; 
+            padding: 20px; 
+            color: #7f8c8d; 
+            background: #ecf0f1; 
+            margin-top: 30px;
+        }
+        .csv-export-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+        }
+        .csv-export-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="../index.html" class="back-button">← Back to Home</a>
+            <h1>Shared Mailbox Report</h1>
+            <div class="subtitle">Security DLP • Generated on Sep 26, 2025 at 19:14</div>
+        </div>
+        
+        <div class="content">
+            <div style='margin: 20px 0; text-align: center;'>
+        <a href='SharedMailbox_Export_Summary.csv' class='csv-export-btn' download>📊 Export Summary CSV</a>
+    </div>
+            
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Full Access</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Send As</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Send on Behalf</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Basic Information</h2>
+                <table class="info-table">
+                    <tr><td><strong>Display Name</strong></td><td>Security DLP</td></tr>
+                    <tr><td><strong>Primary SMTP Address</strong></td><td>securitydlp@netradyne.com</td></tr>
+                    <tr><td><strong>Alias</strong></td><td>security</td></tr>
+                    <tr><td><strong>Recipient Type</strong></td><td>UserMailbox</td></tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>Users with Full Access</h2>
+                <table>
+                    <tr><th>Display Name</th><th>Email Address</th><th>Type</th></tr>
+                </table>
+            </div>
+            
+            <div class="section">
+                <h2>Users with Send As Permission</h2>
+                <table>
+                    <tr><th>Trustee</th><th>Access Rights</th><th>Inherited</th></tr><tr><td colspan='3' style='text-align:center; font-style:italic; color:#7f8c8d;'>No Send As permissions configured</td></tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>Users with Send on Behalf Permission</h2>
+                <table>
+                    <tr><th>Display Name</th><th>Email Address</th><th>Type</th></tr><tr><td colspan='3' style='text-align:center; font-style:italic; color:#7f8c8d;'>No Send On Behalf permissions configured</td></tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>CSV files location:</strong> C:\DLReports\securitydlp@netradyne.com_20250926_191454</p>
+            <p>Report generated on Sep 26, 2025 at 19:14</p>
+        </div>
+    </div>
+</body>
+</html>

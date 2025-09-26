@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Distribution Lists Dashboard</title>
+    <title>Distribution Lists & Shared Mailboxes Dashboard</title>
     <style>
         * { box-sizing: border-box; }
         body { 
@@ -130,6 +130,10 @@
             background: #9b59b6;
             color: white;
         }
+        .dl-type-badge.shared {
+            background: #1abc9c;
+            color: white;
+        }
         .dl-stats {
             display: flex;
             justify-content: space-around;
@@ -234,338 +238,346 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Distribution Lists Dashboard</h1>
-            <div class="subtitle">Comprehensive reporting for all distribution lists</div>
-            <div class="dashboard-stats">
-                <div class="dashboard-stat">
-                    <span class="dashboard-stat-number">15</span>
-                    <span class="dashboard-stat-label">Distribution Lists</span>
-                </div>
-                <div class="dashboard-stat">
-                    <span class="dashboard-stat-number">168</span>
-                    <span class="dashboard-stat-label">Total Members</span>
-                </div>
-                <div class="dashboard-stat">
-                    <span class="dashboard-stat-number">27</span>
-                    <span class="dashboard-stat-label">Total Owners</span>
-                </div>
-                <div class="dashboard-stat">
-                    <span class="dashboard-stat-number">1</span>
-                    <span class="dashboard-stat-label">Dynamic DLs</span>
-                </div>
-            </div>
+            <h1>Distribution Lists & Shared Mailboxes Dashboard</h1>
+            <div class="subtitle">Comprehensive reporting for all items</div>
         </div>
         
         <div style='text-align: center; margin: 30px 0;'>
-            <a href='All_DLs_Export_Summary.csv' class='export-all-btn' download>📊 Export All DLs to CSV</a>
+            <a href='All_Items_Export_Summary.csv' class='export-all-btn' download>📊 Export All Items to CSV</a>
         </div>
         
+        <h2>Distribution Lists</h2>
         <div class="dl-grid">
-                            <div class="dl-card">
-                    <div class="dl-header">
-                        <h3>ND IND In Communication <span class='dl-type-badge static'>Static</span></h3>
-                        <span class="dl-email">ND_IND_In_Communication@netradyne.com</span>
-                    </div>
-                    <div class="dl-stats">
-                        <div class="dl-stat">
-                            <span class="stat-number">6</span>
-                            <span class="stat-label">Members</span>
+                                <div class="dl-card">
+                        <div class="dl-header">
+                            <h3>ND IND In Communication <span class='dl-type-badge static'>Static</span></h3>
+                            <span class="dl-email">ND_IND_In_Communication@netradyne.com</span>
                         </div>
-                        <div class="dl-stat">
-                            <span class="stat-number">3</span>
-                            <span class="stat-label">Owners</span>
+                        <div class="dl-stats">
+                            <div class="dl-stat">
+                                <span class="stat-number">6</span>
+                                <span class="stat-label">Members</span>
+                            </div>
+                            <div class="dl-stat">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Owners</span>
+                            </div>
+                        </div>
+                        <div class="dl-actions">
+                            <a href="ND_IND_In_Communication@netradyne.com_20250926_190732/index.html" class="view-report-btn">View Report</a>
+                            <a href="ND_IND_In_Communication@netradyne.com_20250926_190732/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
+                            <span class="report-time">Generated: Sep 26, 2025 at 19:07</span>
+                        </div>
+                    </div>                    <div class="dl-card">
+                        <div class="dl-header">
+                            <h3>ND-TalentAcquisition <span class='dl-type-badge static'>Static</span></h3>
+                            <span class="dl-email">ND-TalentAcquisition@netradyne.com</span>
+                        </div>
+                        <div class="dl-stats">
+                            <div class="dl-stat">
+                                <span class="stat-number">5</span>
+                                <span class="stat-label">Members</span>
+                            </div>
+                            <div class="dl-stat">
+                                <span class="stat-number">1</span>
+                                <span class="stat-label">Owners</span>
+                            </div>
+                        </div>
+                        <div class="dl-actions">
+                            <a href="ND-TalentAcquisition@netradyne.com_20250926_190743/index.html" class="view-report-btn">View Report</a>
+                            <a href="ND-TalentAcquisition@netradyne.com_20250926_190743/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
+                            <span class="report-time">Generated: Sep 26, 2025 at 19:07</span>
+                        </div>
+                    </div>                    <div class="dl-card">
+                        <div class="dl-header">
+                            <h3>Netradyne Cultural Team <span class='dl-type-badge static'>Static</span></h3>
+                            <span class="dl-email">ndsparks@netradyne.com</span>
+                        </div>
+                        <div class="dl-stats">
+                            <div class="dl-stat">
+                                <span class="stat-number">12</span>
+                                <span class="stat-label">Members</span>
+                            </div>
+                            <div class="dl-stat">
+                                <span class="stat-number">1</span>
+                                <span class="stat-label">Owners</span>
+                            </div>
+                        </div>
+                        <div class="dl-actions">
+                            <a href="ndsparks@netradyne.com_20250926_190810/index.html" class="view-report-btn">View Report</a>
+                            <a href="ndsparks@netradyne.com_20250926_190810/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
+                            <span class="report-time">Generated: Sep 26, 2025 at 19:08</span>
+                        </div>
+                    </div>                    <div class="dl-card">
+                        <div class="dl-header">
+                            <h3>Admin Helpdesk <span class='dl-type-badge static'>Static</span></h3>
+                            <span class="dl-email">admin.helpdesk@netradyne.com</span>
+                        </div>
+                        <div class="dl-stats">
+                            <div class="dl-stat">
+                                <span class="stat-number">4</span>
+                                <span class="stat-label">Members</span>
+                            </div>
+                            <div class="dl-stat">
+                                <span class="stat-number">1</span>
+                                <span class="stat-label">Owners</span>
+                            </div>
+                        </div>
+                        <div class="dl-actions">
+                            <a href="admin.helpdesk@netradyne.com_20250926_190823/index.html" class="view-report-btn">View Report</a>
+                            <a href="admin.helpdesk@netradyne.com_20250926_190823/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
+                            <span class="report-time">Generated: Sep 26, 2025 at 19:08</span>
+                        </div>
+                    </div>                    <div class="dl-card">
+                        <div class="dl-header">
+                            <h3>ND_Global_Communication <span class='dl-type-badge static'>Static</span></h3>
+                            <span class="dl-email">ND_Global_Communication@netradyne.com</span>
+                        </div>
+                        <div class="dl-stats">
+                            <div class="dl-stat">
+                                <span class="stat-number">5</span>
+                                <span class="stat-label">Members</span>
+                            </div>
+                            <div class="dl-stat">
+                                <span class="stat-number">2</span>
+                                <span class="stat-label">Owners</span>
+                            </div>
+                        </div>
+                        <div class="dl-actions">
+                            <a href="ND_Global_Communication@netradyne.com_20250926_190848/index.html" class="view-report-btn">View Report</a>
+                            <a href="ND_Global_Communication@netradyne.com_20250926_190848/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
+                            <span class="report-time">Generated: Sep 26, 2025 at 19:08</span>
+                        </div>
+                    </div>                    <div class="dl-card">
+                        <div class="dl-header">
+                            <h3>All <span class='dl-type-badge static'>Static</span></h3>
+                            <span class="dl-email">all@netradyne.com</span>
+                        </div>
+                        <div class="dl-stats">
+                            <div class="dl-stat">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Members</span>
+                            </div>
+                            <div class="dl-stat">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Owners</span>
+                            </div>
+                        </div>
+                        <div class="dl-actions">
+                            <a href="all@netradyne.com_20250926_190947/index.html" class="view-report-btn">View Report</a>
+                            <a href="all@netradyne.com_20250926_190947/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
+                            <span class="report-time">Generated: Sep 26, 2025 at 19:09</span>
+                        </div>
+                    </div>                    <div class="dl-card">
+                        <div class="dl-header">
+                            <h3>India-All <span class='dl-type-badge static'>Static</span></h3>
+                            <span class="dl-email">india-all@netradyne.com</span>
+                        </div>
+                        <div class="dl-stats">
+                            <div class="dl-stat">
+                                <span class="stat-number">4</span>
+                                <span class="stat-label">Members</span>
+                            </div>
+                            <div class="dl-stat">
+                                <span class="stat-number">1</span>
+                                <span class="stat-label">Owners</span>
+                            </div>
+                        </div>
+                        <div class="dl-actions">
+                            <a href="india-all@netradyne.com_20250926_191014/index.html" class="view-report-btn">View Report</a>
+                            <a href="india-all@netradyne.com_20250926_191014/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
+                            <span class="report-time">Generated: Sep 26, 2025 at 19:10</span>
+                        </div>
+                    </div>                    <div class="dl-card">
+                        <div class="dl-header">
+                            <h3>US-All <span class='dl-type-badge static'>Static</span></h3>
+                            <span class="dl-email">us-all@netradyne.com</span>
+                        </div>
+                        <div class="dl-stats">
+                            <div class="dl-stat">
+                                <span class="stat-number">15</span>
+                                <span class="stat-label">Members</span>
+                            </div>
+                            <div class="dl-stat">
+                                <span class="stat-number">1</span>
+                                <span class="stat-label">Owners</span>
+                            </div>
+                        </div>
+                        <div class="dl-actions">
+                            <a href="us-all@netradyne.com_20250926_191103/index.html" class="view-report-btn">View Report</a>
+                            <a href="us-all@netradyne.com_20250926_191103/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
+                            <span class="report-time">Generated: Sep 26, 2025 at 19:11</span>
+                        </div>
+                    </div>                    <div class="dl-card">
+                        <div class="dl-header">
+                            <h3>Netradyne SVP's <span class='dl-type-badge static'>Static</span></h3>
+                            <span class="dl-email">ND.SVP@netradyne.com</span>
+                        </div>
+                        <div class="dl-stats">
+                            <div class="dl-stat">
+                                <span class="stat-number">6</span>
+                                <span class="stat-label">Members</span>
+                            </div>
+                            <div class="dl-stat">
+                                <span class="stat-number">1</span>
+                                <span class="stat-label">Owners</span>
+                            </div>
+                        </div>
+                        <div class="dl-actions">
+                            <a href="ND.SVP@netradyne.com_20250926_191110/index.html" class="view-report-btn">View Report</a>
+                            <a href="ND.SVP@netradyne.com_20250926_191110/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
+                            <span class="report-time">Generated: Sep 26, 2025 at 19:11</span>
+                        </div>
+                    </div>                    <div class="dl-card">
+                        <div class="dl-header">
+                            <h3>Netradyne IT Team <span class='dl-type-badge static'>Static</span></h3>
+                            <span class="dl-email">it@netradyne.com</span>
+                        </div>
+                        <div class="dl-stats">
+                            <div class="dl-stat">
+                                <span class="stat-number">17</span>
+                                <span class="stat-label">Members</span>
+                            </div>
+                            <div class="dl-stat">
+                                <span class="stat-number">2</span>
+                                <span class="stat-label">Owners</span>
+                            </div>
+                        </div>
+                        <div class="dl-actions">
+                            <a href="it@netradyne.com_20250926_191204/index.html" class="view-report-btn">View Report</a>
+                            <a href="it@netradyne.com_20250926_191204/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
+                            <span class="report-time">Generated: Sep 26, 2025 at 19:12</span>
+                        </div>
+                    </div>                    <div class="dl-card">
+                        <div class="dl-header">
+                            <h3>IT Infosec Team <span class='dl-type-badge static'>Static</span></h3>
+                            <span class="dl-email">it_infosecteam@netradyne.com</span>
+                        </div>
+                        <div class="dl-stats">
+                            <div class="dl-stat">
+                                <span class="stat-number">28</span>
+                                <span class="stat-label">Members</span>
+                            </div>
+                            <div class="dl-stat">
+                                <span class="stat-number">1</span>
+                                <span class="stat-label">Owners</span>
+                            </div>
+                        </div>
+                        <div class="dl-actions">
+                            <a href="it_infosecteam@netradyne.com_20250926_191300/index.html" class="view-report-btn">View Report</a>
+                            <a href="it_infosecteam@netradyne.com_20250926_191300/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
+                            <span class="report-time">Generated: Sep 26, 2025 at 19:13</span>
+                        </div>
+                    </div>                    <div class="dl-card">
+                        <div class="dl-header">
+                            <h3>Netradyne Finance Team <span class='dl-type-badge static'>Static</span></h3>
+                            <span class="dl-email">netradyne.finance@netradyne.com</span>
+                        </div>
+                        <div class="dl-stats">
+                            <div class="dl-stat">
+                                <span class="stat-number">8</span>
+                                <span class="stat-label">Members</span>
+                            </div>
+                            <div class="dl-stat">
+                                <span class="stat-number">5</span>
+                                <span class="stat-label">Owners</span>
+                            </div>
+                        </div>
+                        <div class="dl-actions">
+                            <a href="netradyne.finance@netradyne.com_20250926_191319/index.html" class="view-report-btn">View Report</a>
+                            <a href="netradyne.finance@netradyne.com_20250926_191319/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
+                            <span class="report-time">Generated: Sep 26, 2025 at 19:13</span>
+                        </div>
+                    </div>                    <div class="dl-card">
+                        <div class="dl-header">
+                            <h3>Documentation Team <span class='dl-type-badge static'>Static</span></h3>
+                            <span class="dl-email">documentation-team@netradyne.com</span>
+                        </div>
+                        <div class="dl-stats">
+                            <div class="dl-stat">
+                                <span class="stat-number">6</span>
+                                <span class="stat-label">Members</span>
+                            </div>
+                            <div class="dl-stat">
+                                <span class="stat-number">1</span>
+                                <span class="stat-label">Owners</span>
+                            </div>
+                        </div>
+                        <div class="dl-actions">
+                            <a href="documentation-team@netradyne.com_20250926_191335/index.html" class="view-report-btn">View Report</a>
+                            <a href="documentation-team@netradyne.com_20250926_191335/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
+                            <span class="report-time">Generated: Sep 26, 2025 at 19:13</span>
+                        </div>
+                    </div>                    <div class="dl-card">
+                        <div class="dl-header">
+                            <h3>Email-ExceptionUsers <span class='dl-type-badge dynamic'>Dynamic</span></h3>
+                            <span class="dl-email">emailexceptionusers@netradyne.com</span>
+                        </div>
+                        <div class="dl-stats">
+                            <div class="dl-stat">
+                                <span class="stat-number">43</span>
+                                <span class="stat-label">Members</span>
+                            </div>
+                            <div class="dl-stat">
+                                <span class="stat-number">1</span>
+                                <span class="stat-label">Owners</span>
+                            </div>
+                        </div>
+                        <div class="dl-actions">
+                            <a href="emailexceptionusers@netradyne.com_20250926_191427/index.html" class="view-report-btn">View Report</a>
+                            <a href="emailexceptionusers@netradyne.com_20250926_191427/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
+                            <span class="report-time">Generated: Sep 26, 2025 at 19:14</span>
+                        </div>
+                    </div>                    <div class="dl-card">
+                        <div class="dl-header">
+                            <h3>NDTalentDevelopment <span class='dl-type-badge static'>Static</span></h3>
+                            <span class="dl-email">NDTalentDevelopment@netradyne.com</span>
+                        </div>
+                        <div class="dl-stats">
+                            <div class="dl-stat">
+                                <span class="stat-number">6</span>
+                                <span class="stat-label">Members</span>
+                            </div>
+                            <div class="dl-stat">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Owners</span>
+                            </div>
+                        </div>
+                        <div class="dl-actions">
+                            <a href="NDTalentDevelopment@netradyne.com_20250926_191451/index.html" class="view-report-btn">View Report</a>
+                            <a href="NDTalentDevelopment@netradyne.com_20250926_191451/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
+                            <span class="report-time">Generated: Sep 26, 2025 at 19:14</span>
                         </div>
                     </div>
-                    <div class="dl-actions">
-                        <a href="ND_IND_In_Communication@netradyne.com_20250924_192656/index.html" class="view-report-btn">View Report</a>
-                        <a href="ND_IND_In_Communication@netradyne.com_20250924_192656/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
-                        <span class="report-time">Generated: Sep 24, 2025 at 19:26</span>
-                    </div>
-                </div>                <div class="dl-card">
-                    <div class="dl-header">
-                        <h3>ND-TalentAcquisition <span class='dl-type-badge static'>Static</span></h3>
-                        <span class="dl-email">ND-TalentAcquisition@netradyne.com</span>
-                    </div>
-                    <div class="dl-stats">
-                        <div class="dl-stat">
-                            <span class="stat-number">5</span>
-                            <span class="stat-label">Members</span>
+        </div>
+        
+        <h2>Shared Mailboxes</h2>
+        <div class="dl-grid">
+                                <div class="dl-card">
+                        <div class="dl-header">
+                            <h3>Security DLP <span class='dl-type-badge shared'>Shared Mailbox</span></h3>
+                            <span class="dl-email">securitydlp@netradyne.com</span>
                         </div>
-                        <div class="dl-stat">
-                            <span class="stat-number">1</span>
-                            <span class="stat-label">Owners</span>
+                        <div class="dl-stats">
+                            <div class="dl-stat">
+                                <span class="stat-number">0</span>
+                                <span class="stat-label">Full Access</span>
+                            </div>
+                            <div class="dl-stat">
+                                <span class="stat-number">0</span>
+                                <span class="stat-label">Send As</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="dl-actions">
-                        <a href="ND-TalentAcquisition@netradyne.com_20250924_192707/index.html" class="view-report-btn">View Report</a>
-                        <a href="ND-TalentAcquisition@netradyne.com_20250924_192707/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
-                        <span class="report-time">Generated: Sep 24, 2025 at 19:27</span>
-                    </div>
-                </div>                <div class="dl-card">
-                    <div class="dl-header">
-                        <h3>Netradyne Cultural Team <span class='dl-type-badge static'>Static</span></h3>
-                        <span class="dl-email">ndsparks@netradyne.com</span>
-                    </div>
-                    <div class="dl-stats">
-                        <div class="dl-stat">
-                            <span class="stat-number">12</span>
-                            <span class="stat-label">Members</span>
-                        </div>
-                        <div class="dl-stat">
-                            <span class="stat-number">1</span>
-                            <span class="stat-label">Owners</span>
+                        <div class="dl-actions">
+                            <a href="securitydlp@netradyne.com_20250926_191454/index.html" class="view-report-btn">View Report</a>
+                            <a href="securitydlp@netradyne.com_20250926_191454/SharedMailbox_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
+                            <span class="report-time">Generated: Sep 26, 2025 at 19:14</span>
                         </div>
                     </div>
-                    <div class="dl-actions">
-                        <a href="ndsparks@netradyne.com_20250924_192733/index.html" class="view-report-btn">View Report</a>
-                        <a href="ndsparks@netradyne.com_20250924_192733/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
-                        <span class="report-time">Generated: Sep 24, 2025 at 19:27</span>
-                    </div>
-                </div>                <div class="dl-card">
-                    <div class="dl-header">
-                        <h3>Admin Helpdesk <span class='dl-type-badge static'>Static</span></h3>
-                        <span class="dl-email">admin.helpdesk@netradyne.com</span>
-                    </div>
-                    <div class="dl-stats">
-                        <div class="dl-stat">
-                            <span class="stat-number">4</span>
-                            <span class="stat-label">Members</span>
-                        </div>
-                        <div class="dl-stat">
-                            <span class="stat-number">1</span>
-                            <span class="stat-label">Owners</span>
-                        </div>
-                    </div>
-                    <div class="dl-actions">
-                        <a href="admin.helpdesk@netradyne.com_20250924_192746/index.html" class="view-report-btn">View Report</a>
-                        <a href="admin.helpdesk@netradyne.com_20250924_192746/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
-                        <span class="report-time">Generated: Sep 24, 2025 at 19:27</span>
-                    </div>
-                </div>                <div class="dl-card">
-                    <div class="dl-header">
-                        <h3>ND_Global_Communication <span class='dl-type-badge static'>Static</span></h3>
-                        <span class="dl-email">ND_Global_Communication@netradyne.com</span>
-                    </div>
-                    <div class="dl-stats">
-                        <div class="dl-stat">
-                            <span class="stat-number">5</span>
-                            <span class="stat-label">Members</span>
-                        </div>
-                        <div class="dl-stat">
-                            <span class="stat-number">2</span>
-                            <span class="stat-label">Owners</span>
-                        </div>
-                    </div>
-                    <div class="dl-actions">
-                        <a href="ND_Global_Communication@netradyne.com_20250924_192811/index.html" class="view-report-btn">View Report</a>
-                        <a href="ND_Global_Communication@netradyne.com_20250924_192811/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
-                        <span class="report-time">Generated: Sep 24, 2025 at 19:28</span>
-                    </div>
-                </div>                <div class="dl-card">
-                    <div class="dl-header">
-                        <h3>All <span class='dl-type-badge static'>Static</span></h3>
-                        <span class="dl-email">all@netradyne.com</span>
-                    </div>
-                    <div class="dl-stats">
-                        <div class="dl-stat">
-                            <span class="stat-number">3</span>
-                            <span class="stat-label">Members</span>
-                        </div>
-                        <div class="dl-stat">
-                            <span class="stat-number">3</span>
-                            <span class="stat-label">Owners</span>
-                        </div>
-                    </div>
-                    <div class="dl-actions">
-                        <a href="all@netradyne.com_20250924_192910/index.html" class="view-report-btn">View Report</a>
-                        <a href="all@netradyne.com_20250924_192910/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
-                        <span class="report-time">Generated: Sep 24, 2025 at 19:29</span>
-                    </div>
-                </div>                <div class="dl-card">
-                    <div class="dl-header">
-                        <h3>India-All <span class='dl-type-badge static'>Static</span></h3>
-                        <span class="dl-email">india-all@netradyne.com</span>
-                    </div>
-                    <div class="dl-stats">
-                        <div class="dl-stat">
-                            <span class="stat-number">4</span>
-                            <span class="stat-label">Members</span>
-                        </div>
-                        <div class="dl-stat">
-                            <span class="stat-number">1</span>
-                            <span class="stat-label">Owners</span>
-                        </div>
-                    </div>
-                    <div class="dl-actions">
-                        <a href="india-all@netradyne.com_20250924_192939/index.html" class="view-report-btn">View Report</a>
-                        <a href="india-all@netradyne.com_20250924_192939/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
-                        <span class="report-time">Generated: Sep 24, 2025 at 19:29</span>
-                    </div>
-                </div>                <div class="dl-card">
-                    <div class="dl-header">
-                        <h3>US-All <span class='dl-type-badge static'>Static</span></h3>
-                        <span class="dl-email">us-all@netradyne.com</span>
-                    </div>
-                    <div class="dl-stats">
-                        <div class="dl-stat">
-                            <span class="stat-number">15</span>
-                            <span class="stat-label">Members</span>
-                        </div>
-                        <div class="dl-stat">
-                            <span class="stat-number">1</span>
-                            <span class="stat-label">Owners</span>
-                        </div>
-                    </div>
-                    <div class="dl-actions">
-                        <a href="us-all@netradyne.com_20250924_193028/index.html" class="view-report-btn">View Report</a>
-                        <a href="us-all@netradyne.com_20250924_193028/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
-                        <span class="report-time">Generated: Sep 24, 2025 at 19:30</span>
-                    </div>
-                </div>                <div class="dl-card">
-                    <div class="dl-header">
-                        <h3>Netradyne SVP's <span class='dl-type-badge static'>Static</span></h3>
-                        <span class="dl-email">ND.SVP@netradyne.com</span>
-                    </div>
-                    <div class="dl-stats">
-                        <div class="dl-stat">
-                            <span class="stat-number">6</span>
-                            <span class="stat-label">Members</span>
-                        </div>
-                        <div class="dl-stat">
-                            <span class="stat-number">1</span>
-                            <span class="stat-label">Owners</span>
-                        </div>
-                    </div>
-                    <div class="dl-actions">
-                        <a href="ND.SVP@netradyne.com_20250924_193036/index.html" class="view-report-btn">View Report</a>
-                        <a href="ND.SVP@netradyne.com_20250924_193036/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
-                        <span class="report-time">Generated: Sep 24, 2025 at 19:30</span>
-                    </div>
-                </div>                <div class="dl-card">
-                    <div class="dl-header">
-                        <h3>Netradyne IT Team <span class='dl-type-badge static'>Static</span></h3>
-                        <span class="dl-email">it@netradyne.com</span>
-                    </div>
-                    <div class="dl-stats">
-                        <div class="dl-stat">
-                            <span class="stat-number">17</span>
-                            <span class="stat-label">Members</span>
-                        </div>
-                        <div class="dl-stat">
-                            <span class="stat-number">2</span>
-                            <span class="stat-label">Owners</span>
-                        </div>
-                    </div>
-                    <div class="dl-actions">
-                        <a href="it@netradyne.com_20250924_193126/index.html" class="view-report-btn">View Report</a>
-                        <a href="it@netradyne.com_20250924_193126/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
-                        <span class="report-time">Generated: Sep 24, 2025 at 19:31</span>
-                    </div>
-                </div>                <div class="dl-card">
-                    <div class="dl-header">
-                        <h3>IT Infosec Team <span class='dl-type-badge static'>Static</span></h3>
-                        <span class="dl-email">it_infosecteam@netradyne.com</span>
-                    </div>
-                    <div class="dl-stats">
-                        <div class="dl-stat">
-                            <span class="stat-number">28</span>
-                            <span class="stat-label">Members</span>
-                        </div>
-                        <div class="dl-stat">
-                            <span class="stat-number">1</span>
-                            <span class="stat-label">Owners</span>
-                        </div>
-                    </div>
-                    <div class="dl-actions">
-                        <a href="it_infosecteam@netradyne.com_20250924_193222/index.html" class="view-report-btn">View Report</a>
-                        <a href="it_infosecteam@netradyne.com_20250924_193222/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
-                        <span class="report-time">Generated: Sep 24, 2025 at 19:32</span>
-                    </div>
-                </div>                <div class="dl-card">
-                    <div class="dl-header">
-                        <h3>Netradyne Finance Team <span class='dl-type-badge static'>Static</span></h3>
-                        <span class="dl-email">netradyne.finance@netradyne.com</span>
-                    </div>
-                    <div class="dl-stats">
-                        <div class="dl-stat">
-                            <span class="stat-number">8</span>
-                            <span class="stat-label">Members</span>
-                        </div>
-                        <div class="dl-stat">
-                            <span class="stat-number">5</span>
-                            <span class="stat-label">Owners</span>
-                        </div>
-                    </div>
-                    <div class="dl-actions">
-                        <a href="netradyne.finance@netradyne.com_20250924_193548/index.html" class="view-report-btn">View Report</a>
-                        <a href="netradyne.finance@netradyne.com_20250924_193548/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
-                        <span class="report-time">Generated: Sep 24, 2025 at 19:35</span>
-                    </div>
-                </div>                <div class="dl-card">
-                    <div class="dl-header">
-                        <h3>Documentation Team <span class='dl-type-badge static'>Static</span></h3>
-                        <span class="dl-email">documentation-team@netradyne.com</span>
-                    </div>
-                    <div class="dl-stats">
-                        <div class="dl-stat">
-                            <span class="stat-number">6</span>
-                            <span class="stat-label">Members</span>
-                        </div>
-                        <div class="dl-stat">
-                            <span class="stat-number">1</span>
-                            <span class="stat-label">Owners</span>
-                        </div>
-                    </div>
-                    <div class="dl-actions">
-                        <a href="documentation-team@netradyne.com_20250924_193603/index.html" class="view-report-btn">View Report</a>
-                        <a href="documentation-team@netradyne.com_20250924_193603/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
-                        <span class="report-time">Generated: Sep 24, 2025 at 19:36</span>
-                    </div>
-                </div>                <div class="dl-card">
-                    <div class="dl-header">
-                        <h3>Email-ExceptionUsers <span class='dl-type-badge dynamic'>Dynamic</span></h3>
-                        <span class="dl-email">emailexceptionusers@netradyne.com</span>
-                    </div>
-                    <div class="dl-stats">
-                        <div class="dl-stat">
-                            <span class="stat-number">43</span>
-                            <span class="stat-label">Members</span>
-                        </div>
-                        <div class="dl-stat">
-                            <span class="stat-number">1</span>
-                            <span class="stat-label">Owners</span>
-                        </div>
-                    </div>
-                    <div class="dl-actions">
-                        <a href="emailexceptionusers@netradyne.com_20250924_193656/index.html" class="view-report-btn">View Report</a>
-                        <a href="emailexceptionusers@netradyne.com_20250924_193656/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
-                        <span class="report-time">Generated: Sep 24, 2025 at 19:36</span>
-                    </div>
-                </div>                <div class="dl-card">
-                    <div class="dl-header">
-                        <h3>NDTalentDevelopment <span class='dl-type-badge static'>Static</span></h3>
-                        <span class="dl-email">NDTalentDevelopment@netradyne.com</span>
-                    </div>
-                    <div class="dl-stats">
-                        <div class="dl-stat">
-                            <span class="stat-number">6</span>
-                            <span class="stat-label">Members</span>
-                        </div>
-                        <div class="dl-stat">
-                            <span class="stat-number">3</span>
-                            <span class="stat-label">Owners</span>
-                        </div>
-                    </div>
-                    <div class="dl-actions">
-                        <a href="NDTalentDevelopment@netradyne.com_20250924_193719/index.html" class="view-report-btn">View Report</a>
-                        <a href="NDTalentDevelopment@netradyne.com_20250924_193719/DL_Export_Summary.csv" class="csv-export-btn" download>📊 CSV</a>
-                        <span class="report-time">Generated: Sep 24, 2025 at 19:37</span>
-                    </div>
-                </div>
         </div>
         
         <div class="footer">
-            <p>Distribution Lists Dashboard • Generated on Sep 24, 2025 at 19:37</p>
+            <p>Dashboard • Generated on Sep 26, 2025 at 19:14</p>
             <p>Reports saved to: C:\DLReports</p>
         </div>
     </div>
